@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Raintech Inn — Room Booking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <span class="brand">The Raintech Inn</span>
+      <span class="brand-sub">Room booking</span>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+
+    <!-- ROOM LIST -->
+    <section class="rooms-panel" aria-labelledby="rooms-heading">
+      <div class="rooms-panel-head">
+        <h1 id="rooms-heading">Available rooms</h1>
+        <label class="guest-filter">
+          Guests
+          <select id="guestFilter">
+            <option value="0">Any</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </label>
+      </div>
+
+      <ul class="room-list" id="roomList" role="list"></ul>
+    </section>
+
+    <!-- BOOKING PANEL -->
+    <aside class="booking-panel" aria-labelledby="booking-heading">
+      <h2 id="booking-heading">Your stay</h2>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="checkin">Check-in</label>
+          <input type="date" id="checkin" />
+        </div>
+        <div class="field">
+          <label for="checkout">Check-out</label>
+          <input type="date" id="checkout" />
+        </div>
+      </div>
+
+      <p class="field-error" id="dateError" role="alert" hidden></p>
+
+      <div class="selected-room" id="selectedRoomBox">
+        <p class="muted">No room selected yet — choose one from the list.</p>
+      </div>
+
+      <p class="field-error" id="bookingError" role="alert" hidden></p>
+
+      <div class="summary" id="summary" hidden>
+        <div class="summary-row">
+          <span>Nights</span>
+          <span id="sumNights">—</span>
+        </div>
+        <div class="summary-row">
+          <span>Price / night</span>
+          <span id="sumRate">—</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span id="sumTotal">—</span>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
